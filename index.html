@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stocks.css">
+    <title>Stocks</title>
+</head>
+
+<body onload="onInit()">
+    <header>
+        <h1>Stocks</h1>
+        <input oninput1="onGetQuotes()" id="symbol" type="search" list="symbols" name="symbol"
+            placeholder="Choose Company">
+        <datalist id="symbols">
+            <option value="AMZN" label="Amazon"></option>
+            <option value="TEVA" label="Teva"></option>
+            <option value="META" label="Meta"></option>
+            <option value="TSLA" label="Tesla"></option>
+            <option value="NVDA" label="Nvidia"></option>
+        </datalist>
+    </header>
+
+    <section class="loader hide">
+        <img src="img/loading.svg" alt="" >
+    </section>
+
+    <section class="chart hide">
+        <canvas id="myChart"></canvas>
+    </section>
+
+    <section class="msg hide">
+        <h2>Please enter a valid stock symbol</h2>
+    </section>
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/chart.min.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/stock.service.js"></script>
+    <script src="js/stock.controller.js"></script>
+</body>
+
+</html>
